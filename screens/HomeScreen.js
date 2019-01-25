@@ -63,12 +63,16 @@ export default class HomeScreen extends React.Component {
           />
         </View>
         <View style={styles.radioView}>
-          {this.state.type === "all-meat" ? (
-            <TouchableOpacity
-              style={styles.radioBtn}
-              accessibilityLabel={"All Meat"}
-              accessibilityHint={"All meat option is on"}
-            >
+          <TouchableOpacity
+            style={styles.radioBtn}
+            accessibilityLabel={"All Meat"}
+            accessibilityHint={`${
+              this.state.type
+                ? "All meat option is on"
+                : "All Meat option is off"
+            }`}
+          >
+            {this.state.type === "all-meat" ? (
               <Icon.Ionicons
                 name={
                   Platform.OS === "ios"
@@ -78,17 +82,7 @@ export default class HomeScreen extends React.Component {
                 size={Sizes.optionIcon}
                 color={Colors.selectedIcon}
               />
-              <Text style={styles.radioText}>All Meat</Text>
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity
-              onPress={() => {
-                this.handleChange("type", "all-meat");
-              }}
-              style={styles.radioBtn}
-              accessibilityLabel={"All Meat"}
-              accessibilityHint={"All meat option is off"}
-            >
+            ) : (
               <Icon.Ionicons
                 name={
                   Platform.OS === "ios"
@@ -98,17 +92,17 @@ export default class HomeScreen extends React.Component {
                 size={Sizes.optionIcon}
                 color={Colors.unselectedIcon}
               />
-              <Text style={styles.radioText}>All Meat</Text>
-            </TouchableOpacity>
-          )}
+            )}
+            <Text>All Meat</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.radioView}>
-          {this.state.type === "meat-and-filler" ? (
-            <TouchableOpacity
-              style={styles.radioBtn}
-              accessibilityLabel={"Meat and Filler"}
-              accessibilityHint={"Meat and Filler option is on"}
-            >
+          <TouchableOpacity
+            style={styles.radioBtn}
+            accessibilityLabel={"Meat and Filler"}
+            accessibilityHint={"Meat and Filler option is on"}
+          >
+            {this.state.type === "meat-and-filler" ? (
               <Icon.Ionicons
                 name={
                   Platform.OS === "ios"
@@ -118,17 +112,7 @@ export default class HomeScreen extends React.Component {
                 size={Sizes.optionIcon}
                 color={Colors.selectedIcon}
               />
-              <Text style={styles.radioText}>Meat and Filler</Text>
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity
-              onPress={() => {
-                this.handleChange("type", "meat-and-filler");
-              }}
-              style={styles.radioBtn}
-              accessibilityLabel={"Meat and Filler"}
-              accessibilityHint={"Meat and Filler option is off"}
-            >
+            ) : (
               <Icon.Ionicons
                 name={
                   Platform.OS === "ios"
@@ -138,9 +122,9 @@ export default class HomeScreen extends React.Component {
                 size={Sizes.optionIcon}
                 color={Colors.unselectedIcon}
               />
-              <Text style={styles.radioText}>Meat and Filler</Text>
-            </TouchableOpacity>
-          )}
+            )}
+            <Text style={styles.radioText}>Meat and Filler</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.radioView}>
           <TouchableOpacity
@@ -149,7 +133,11 @@ export default class HomeScreen extends React.Component {
             }}
             style={styles.radioBtn}
             accessibilityLabel={"Start with Lorem"}
-            accessibilityHint={`${this.state.makeItSpicy ? "on" : "off"}`}
+            accessibilityHint={`${
+              this.state.startWithLorem
+                ? "Start with Lorem option is on"
+                : "Start with Lorem option is off"
+            }`}
           >
             {this.state.startWithLorem ? (
               <Icon.Ionicons
@@ -182,7 +170,11 @@ export default class HomeScreen extends React.Component {
             }}
             style={styles.radioBtn}
             accessibilityLabel={"Make it Spicy"}
-            accessibilityHint={`${this.state.makeItSpicy ? "on" : "off"}`}
+            accessibilityHint={`${
+              this.state.makeItSpicy
+                ? "Make it spicy option is on"
+                : "Make it spicy option is off"
+            }`}
           >
             {this.state.makeItSpicy ? (
               <Icon.Ionicons
