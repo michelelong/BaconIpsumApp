@@ -24,6 +24,9 @@
     },
     "android": {
       "package": "com.baconipsum"
+    },
+    "packagerOpts": {
+      "nonPersistent": true
     }
   }
 }
