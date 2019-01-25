@@ -64,6 +64,9 @@ export default class HomeScreen extends React.Component {
         </View>
         <View style={styles.radioView}>
           <TouchableOpacity
+            onPress={() => {
+              this.handleChange("type", "all-meat");
+            }}
             style={styles.radioBtn}
             accessibilityLabel={"All Meat"}
             accessibilityHint={`${
@@ -93,11 +96,14 @@ export default class HomeScreen extends React.Component {
                 color={Colors.unselectedIcon}
               />
             )}
-            <Text>All Meat</Text>
+            <Text style={styles.radioText}>All Meat</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.radioView}>
           <TouchableOpacity
+            onPress={() => {
+              this.handleChange("type", "meat-and-filler");
+            }}
             style={styles.radioBtn}
             accessibilityLabel={"Meat and Filler"}
             accessibilityHint={"Meat and Filler option is on"}

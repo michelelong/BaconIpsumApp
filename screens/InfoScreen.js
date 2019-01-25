@@ -38,16 +38,16 @@ export default class InfoScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View>
+          <Text style={styles.titleText}>Paragraphs:</Text>
+          <Text>Number of paragraphs, defaults to 5.</Text>
+        </View>
+        <View>
           <Text style={styles.titleText}>All Meat:</Text>
           <Text>All meat, all the time.</Text>
         </View>
         <View>
           <Text style={styles.titleText}>Meat and Filler:</Text>
           <Text>Meat mixed with ‘lorem ipsum’ filler.</Text>
-        </View>
-        <View>
-          <Text style={styles.titleText}>Paragraphs:</Text>
-          <Text>Number of paragraphs, defaults to 5.</Text>
         </View>
         <View>
           <Text style={styles.titleText}>Start with Lorem:</Text>
