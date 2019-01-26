@@ -6,13 +6,11 @@ import {
   ScrollView,
   Clipboard,
   ActivityIndicator,
-  TouchableOpacity,
-  View
+  TouchableOpacity
 } from "react-native";
 import { Icon } from "expo";
 
 import { Colors, Sizes } from "../components/Constants";
-import HomeScreen from "./HomeScreen";
 
 export default class IpsumScreen extends React.Component {
   constructor() {
@@ -67,7 +65,12 @@ export default class IpsumScreen extends React.Component {
   }
 
   copyToClipboard = async () => {
-    let dataToStr = JSON.stringify(this.state.data, null, "\n");
+    const dataToStr = await this.state.data
+      .map(function(e) {
+        return JSON.stringify(e);
+      })
+      .join("\r\n");
+
     await Clipboard.setString(dataToStr);
     this.props.navigation.setParams({ title: "Copied to Clipboard" });
   };
@@ -90,7 +93,13 @@ export default class IpsumScreen extends React.Component {
         </ScrollView>
       );
     } else {
-      return <ActivityIndicator size="large" color={Colors.loadingAni} />;
+      return (
+        <ActivityIndicator
+          size="large"
+          color={Colors.loadingAni}
+          style={styles.loader}
+        />
+      );
     }
   }
 }
@@ -106,5 +115,8 @@ const styles = StyleSheet.create({
   },
   paras: {
     padding: 10
+  },
+  loader: {
+    justifyContent: "center"
   }
 });

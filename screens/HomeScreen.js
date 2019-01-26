@@ -57,6 +57,7 @@ export default class HomeScreen extends React.Component {
             keyboardType={"number-pad"}
             style={styles.textBox}
             value={this.state.paras}
+            maxLength={2}
             accessibilityLabel={"Number of paragraphs"}
             accessibilityHint={"Enter the number of paragraphs"}
           />
@@ -230,11 +231,6 @@ const styles = StyleSheet.create({
     fontSize: Fonts.optionText,
     fontWeight: "bold"
   },
-  spicyText: {
-    paddingRight: 60,
-    fontSize: Fonts.optionText,
-    fontWeight: "bold"
-  },
   textBox: {
     fontSize: Fonts.optionText,
     fontWeight: "bold",
@@ -257,8 +253,11 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   radioText: {
-    paddingLeft: 60,
+    paddingLeft: 50,
     fontSize: Fonts.optionText,
     fontWeight: "bold"
+  },
+  radioView: {
+    marginLeft: 10
   }
 });
