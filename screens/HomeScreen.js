@@ -51,7 +51,6 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.textView}>
-          <Text style={styles.titleText}>Paragraphs:</Text>
           <TextInput
             defaultValue={"5"}
             onChangeText={value => this.handleChange("paras", value)}
@@ -61,6 +60,7 @@ export default class HomeScreen extends React.Component {
             accessibilityLabel={"Number of paragraphs"}
             accessibilityHint={"Enter the number of paragraphs"}
           />
+          <Text style={styles.parasText}>Paragraphs</Text>
         </View>
         <View style={styles.radioView}>
           <TouchableOpacity
@@ -225,8 +225,8 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     justifyContent: "space-evenly"
   },
-  titleText: {
-    paddingRight: 40,
+  parasText: {
+    paddingLeft: 40,
     fontSize: Fonts.optionText,
     fontWeight: "bold"
   },
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   radioText: {
-    paddingLeft: 40,
+    paddingLeft: 60,
     fontSize: Fonts.optionText,
     fontWeight: "bold"
   }
