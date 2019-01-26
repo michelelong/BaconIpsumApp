@@ -64,14 +64,14 @@ export default class IpsumScreen extends React.Component {
     this.props.navigation.setParams({ copyToClipboard: this.copyToClipboard });
   }
 
-  copyToClipboard = async () => {
-    const dataToStr = await this.state.data
+  copyToClipboard = () => {
+    const dataToStr = this.state.data
       .map(function(e) {
         return JSON.stringify(e);
       })
       .join("\r\n");
 
-    await Clipboard.setString(dataToStr);
+    Clipboard.setString(dataToStr);
     this.props.navigation.setParams({ title: "Copied to Clipboard" });
   };
 
