@@ -70,9 +70,7 @@ export default class HomeScreen extends React.Component {
             style={styles.radioBtn}
             accessibilityLabel={"All Meat"}
             accessibilityHint={`${
-              this.state.type
-                ? "All meat option is on"
-                : "All Meat option is off"
+              this.state.type === "all-meat" ? "Option is on" : "Option is off"
             }`}
           >
             {this.state.type === "all-meat" ? (
@@ -106,7 +104,11 @@ export default class HomeScreen extends React.Component {
             }}
             style={styles.radioBtn}
             accessibilityLabel={"Meat and Filler"}
-            accessibilityHint={"Meat and Filler option is on"}
+            accessibilityHint={`${
+              this.state.type === "meat-and-filler"
+                ? "Option is on"
+                : "Option is off"
+            }`}
           >
             {this.state.type === "meat-and-filler" ? (
               <Icon.Ionicons
@@ -140,9 +142,7 @@ export default class HomeScreen extends React.Component {
             style={styles.radioBtn}
             accessibilityLabel={"Start with Lorem"}
             accessibilityHint={`${
-              this.state.startWithLorem
-                ? "Start with Lorem option is on"
-                : "Start with Lorem option is off"
+              this.state.startWithLorem ? "Option is on" : "Option is off"
             }`}
           >
             {this.state.startWithLorem ? (
@@ -177,9 +177,7 @@ export default class HomeScreen extends React.Component {
             style={styles.radioBtn}
             accessibilityLabel={"Make it Spicy"}
             accessibilityHint={`${
-              this.state.makeItSpicy
-                ? "Make it spicy option is on"
-                : "Make it spicy option is off"
+              this.state.makeItSpicy ? "Option is on" : "Option is off"
             }`}
           >
             {this.state.makeItSpicy ? (
