@@ -8,3 +8,4 @@ http://baconipsum.com
 \*Doesn't belong to me
 
 This code is written in a old, no longer supported SDK.
+I do not maintain it.
